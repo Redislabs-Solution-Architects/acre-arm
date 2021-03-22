@@ -1,0 +1,34 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "prefix": {
+            "type": "string",
+            "defaultValue": "redisgeek",
+            "minLength": 3,
+            "maxLength": 11
+        },
+        "rgLocation": {
+            "type": "string",
+            "defaultValue": "[deployment().location]",
+            "metadata": {
+                "description": "Location for the resourceGroup"
+            }
+        }
+    },
+    "variables": {
+        "resourceGroupName": "[concat(parameters('prefix'), uniqueString(subscription().id))]"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Resources/resourceGroups",
+            "apiVersion": "2020-06-01",
+            "name": "[variables('resourceGroupName')]",
+            "location": "[parameters('rgLocation')]",
+            "tags": {
+                "Note": "subscription level deployment"
+            },
+            "properties": {}
+        }
+    ]
+}
