@@ -1,0 +1,41 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "0.0.0.1",
+  "parameters": {},
+  "resources": [
+    {
+      "name": "${acre_name}",
+      "type": "Microsoft.Cache/redisEnterprise",
+      "apiVersion": "2021-03-01",
+      "properties": {},
+      "location": "${location}",
+      "dependsOn": [],
+      "sku": {
+        "name": "${acre_sku}",
+        "capacity": "${acre_capacity}"
+      },
+      "zones": [
+        "1",
+        "2",
+        "3"
+      ],
+      "tags": {},
+      "resources": [
+        {
+          "name": "${acre_name}/default",
+          "type": "Microsoft.Cache/redisEnterprise/databases",
+          "apiVersion": "2021-02-01-preview",
+          "properties": {
+            "clientProtocol": "${acre_client_protocol}",
+            "evictionPolicy": "${acre_eviction_policy}",
+            "clusteringPolicy": "${acre_cluster_policy}"
+          },
+          "dependsOn": [
+            "Microsoft.Cache/redisEnterprise/${acre_name}"
+          ],
+          "tags": {}
+        }
+      ]
+    }
+  ]
+}
