@@ -6,8 +6,6 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
 
 
 <!-- PROJECT LOGO -->
@@ -21,29 +19,8 @@
 <h3 align="center">acre-arm</h3>
 
   <p align="center">
-    ARM templates for Azure Cache for Redis Enterprise
-    <br />
-    ·
-    <a href="https://github.com/redisgeek/acre-arm/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/redisgeek/acre-arm/issues">Request Feature</a>
+    Related ARM templates for Azure Cache for Redis Enterprise
   </p>
-
-
-<!-- TABLE OF CONTENTS -->
-<details open="open">
-  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
-  <ol>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-  </ol>
-</details>
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-PRs are welcomed.
 
 <!-- LICENSE -->
 ## License
